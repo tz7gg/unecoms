@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <title>Акции</title>
+  </head>
+  <body>
+    
+<div id="arrows">    
+  <div class="hidden" id="arrowup">
+    <a href="#"><img src="images/arrowup.png" alt=""></a>
+  </div>
+
+  <div id="arrowdown">
+    <a href="#"><img src="images/arrowdown.png" alt=""></a>
+  </div>
+</div> 
+
+
+  <div id="full-page">
+    <div class="block-1">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 header-logo">
+              <a href="https://unecoms.ru/"><img src="images/logo.png" alt=""></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 miracle">
+              <img src="images/miracle.png" alt="">
+            </div>
+          </div>
+            
+          </div>  
+        </div>
+      </div>
+      <div class="block-2">
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 block-2-logo">
+                <a href="https://unecoms.ru/"><img src="images/logo.png" alt=""><br></a>
+                <p class="block-2-content"><span>Пройди повышение</span> квалификации <br>для СРЕДНЕГО МЕДИЦИНСКОГО <br>персонала <span>в 2019 году</span>, получи <br>НМО в <span>ПОДАРОК!</span> <br><br>Дистанционно! <br>Выгодно! <br>Качественно!</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 button">
+                <a href="https://unecoms.ru/product-category/zdravoohran/srednij-med-personal/sertifikatsionnye-tsikly/">ЖМИ</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="block-3">
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 block-3-logo">
+                <a href="https://unecoms.ru/"><img src="images/block-3-logo.png" alt=""></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 block-3-content">
+                <p>При покупке любого<br>
+                   сертификационного цикла 144 часа для <br>
+                   <span>СРЕДНЕГО МЕДПЕРСОНАЛА до 31 декабря 2019 года </span><br>
+                   слушатель получает право обучиться по системе <br>
+                   НМО в 2020 году <span>БЕСПЛАТНО!</span></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 button-1">
+                <a href="https://unecoms.ru/product-category/zdravoohran/srednij-med-personal/sertifikatsionnye-tsikly/">ЖМИ</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="block-4-stock"><p>Подробнее с условиями акции можно ознакомиться <a href="usloviya.html">тут</a></p></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+  </div>
+
+
+
+    <!-- Optional JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+
+    var wh = document.documentElement.clientWidth;
+    var vh = window.innerHeight; // видимая высота устройства 
+    var page; // #full-page 
+    var block = 0; // велечина прокрутки 
+    var currentBlock = 0; // какой блок. отсчет с нуля 
+
+    // if (wh < 576) {
+    //   $("br").remove();
+    // }
+
+    if (wh < 576) {
+      $('.block-4-logo img').attr('src' , 'images/logo.png');
+    }
+    if (wh > 1200) {
+      console.log(wh);
+    page = document.getElementById('full-page');
+        page.addEventListener(  "wheel", function (event) {
+          if (event.deltaY > 0) {
+            if (block < vh * 2 ) { // vh * x - количесво блоков
+            block = block + vh;
+            $('#full-page').stop().animate({scrollTop: block }, 1000);
+            console.log(currentBlock = block / vh);
+            }
+          } else {
+            if (block > 0) {
+            block = block - vh;
+            $('#full-page').stop().animate({scrollTop: block }, 1000);
+            console.log(currentBlock = block / vh);
+            }
+          }
+
+          if (currentBlock === 0) {
+            $('#arrowup').removeClass('vizible');
+            $("#arrowup").addClass('hidden')
+            $('#arrowdown').removeClass("hidden");
+            $('#arrowdown').addClass("vizible");
+          }
+
+           if (currentBlock === 1) {
+            $('#arrowdown img').attr("src", "images/arrowdown.png")
+            $("#arrowdown").addClass('vizible')
+            $('#arrowup img').attr("src", "images/arrowup.png")
+            $('#arrowup').removeClass('hidden');
+            $("#arrowup").addClass('vizible')
+          }
+
+          if (currentBlock === 2) {
+            $('#arrowdown img').attr("src", "images/arrowdown-gray.png")
+            $('#arrowup img').attr("src", "images/arrowup-gray.png")
+            $('#arrowdown').removeClass("vizible");
+            $('#arrowdown').addClass("hidden");
+          }
+
+        });  
+
+    arrowdown = document.getElementById("arrowdown");
+    arrowdown.addEventListener('click', function (event) {
+      if (block < vh * 3 ) { // vh * x - количесво блоков
+            block = block + vh;
+            $('#full-page').stop().animate({scrollTop: block }, 1000);
+            console.log(currentBlock = block / vh);
+            }
+
+           if (currentBlock === 0) {
+            $('#arrowup').removeClass('vizible');
+            $("#arrowup").addClass('hidden')
+            $('#arrowdown').removeClass("hidden");
+            $('#arrowdown').addClass("vizible");
+          }
+
+           if (currentBlock === 1) {
+            $('#arrowdown img').attr("src", "images/arrowdown.png")
+            $("#arrowdown").addClass('vizible')
+            $('#arrowup img').attr("src", "images/arrowup.png")
+            $('#arrowup').removeClass('hidden');
+            $("#arrowup").addClass('vizible')
+          }
+
+          if (currentBlock === 2) {
+            $('#arrowdown img').attr("src", "images/arrowdown-gray.png")
+            $('#arrowup img').attr("src", "images/arrowup-gray.png")
+            $('#arrowdown').removeClass("vizible");
+            $('#arrowdown').addClass("hidden");
+          }
+    });    
+
+    arrowup = document.getElementById("arrowup");
+    arrowup.addEventListener('click', function (event) {
+      if (block > 0) {
+            block = block - vh;
+            $('#full-page').stop().animate({scrollTop: block }, 1000);
+            console.log(currentBlock = block / vh);
+      }
+ if (currentBlock === 0) {
+            $('#arrowup').removeClass('vizible');
+            $("#arrowup").addClass('hidden')
+            $('#arrowdown').removeClass("hidden");
+            $('#arrowdown').addClass("vizible");
+          }
+
+           if (currentBlock === 1) {
+            $('#arrowdown img').attr("src", "images/arrowdown.png")
+            $("#arrowdown").addClass('vizible')
+            $('#arrowup img').attr("src", "images/arrowup.png")
+            $('#arrowup').removeClass('hidden');
+            $("#arrowup").addClass('vizible')
+          }
+
+          if (currentBlock === 2) {
+            $('#arrowdown img').attr("src", "images/arrowdown-gray.png")
+            $('#arrowup img').attr("src", "images/arrowup-gray.png")
+            $('#arrowdown').removeClass("vizible");
+            $('#arrowdown').addClass("hidden");
+          }
+    });  
+}
+
+    
+
+
+  </script>
+
+  </body>
+</html>
